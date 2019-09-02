@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "riteway -r @babel/register -r @babel/polyfill 'src/**/*.test.js' | faucet",
+    "test": "nyc riteway -r @babel/register -r @babel/polyfill 'src/**/*.test.js' | tap-nirvana",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,8 +45,10 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.5.5",
     "babel-preset-react-app": "^9.0.1",
+    "nyc": "^14.1.1",
     "redux-logger": "^3.0.6",
     "riteway": "^6.1.0",
+    "tap-nirvana": "^1.1.0",
     "tape": "^4.11.0"
   }
 }
