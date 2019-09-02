@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "babel-tape-runner src/**/*-test.js | faucet",
+    "test": "riteway -r @babel/register -r @babel/polyfill 'src/**/*.test.js' | faucet",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,10 +39,14 @@
     ]
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
     "babel-preset-react-app": "^9.0.1",
-    "babel-tape-runner": "^3.0.0",
     "redux-logger": "^3.0.6",
+    "riteway": "^6.1.0",
     "tape": "^4.11.0"
   }
 }
