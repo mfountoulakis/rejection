@@ -1,7 +1,7 @@
 import test from "tape";
-import { createState, createStoreCopy } from "./reducer-factories";
-import { askReducer } from "./reducer";
-import { addAsk, acceptAsk, rejectAsk } from "./actions";
+import { createState, createStoreCopy } from "../reducer-factories";
+import { askReducer } from "../reducer";
+import { addAsk, acceptAsk, rejectAsk } from "../actions";
 
 test("creating an ask with all arguments", ({ same, end }) => {
   const msg = "should return the correct state";

@@ -1,9 +1,9 @@
 import test from "tape";
 
-import { askReducer } from "./reducer.js";
-import { createAsk, createState } from "./reducer-factories";
-import { addAsk } from "./actions";
-import { getViewState } from "./selectors";
+import { askReducer } from "../reducer.js";
+import { createAsk, createState } from "../reducer-factories";
+import { addAsk } from "../actions";
+import { getViewState } from "../selectors";
 
 test("creating asks in state", ({ same, end }) => {
   const msg = "should return return the correct computed property value";

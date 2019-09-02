@@ -1,6 +1,6 @@
 import test from "tape";
-import { createState } from "./reducer-factories";
-import { askReducer } from "./reducer";
+import { createState } from "../reducer-factories";
+import { askReducer } from "../reducer";
 
 test("A passing test, test", assert => {
   assert.pass("This test will pass.");
