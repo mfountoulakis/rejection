@@ -1,26 +1,28 @@
 import React from "react";
 import "./App.css";
-import "@blueprintjs/core/lib/css/blueprint.css";
 
-import TabelBody from "./components/TableBody";
+import "react-bulma-components/dist/react-bulma-components.min.css";
+
+import Nav from "./components/Nav";
+import Asks from "./components/Asks";
+import AskForm from "./components/AskForm";
+import Hero from "./components/Hero";
+import Level from "./components/Level";
+
+import { Container, Section } from "react-bulma-components";
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<TabelBody />
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
+			<Nav />
+			<Hero />
+			<Section>
+				<Container>
+					<Level />
+					<AskForm />
+					<Asks />
+				</Container>
+			</Section>
 		</div>
 	);
 }
