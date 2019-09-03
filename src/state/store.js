@@ -12,7 +12,6 @@ const persistConfig = {
 };
 
 export default function configureStore() {
-  let middleware = applyMiddleware(logger);
   const persistedReducer = persistReducer(persistConfig, reducers);
 
   const composeEnhancers =
@@ -22,6 +21,10 @@ export default function configureStore() {
         })
       : compose;
 
+  const mids = process.env.NODE_ENV === "development" ? [logger] : [];
+
+  const middleware = applyMiddleware(...mids);
+
   const enhancer = composeEnhancers(middleware);
   // other store enhancers if any
 
@@ -29,8 +32,6 @@ export default function configureStore() {
 
   // Middleware: Redux Persist Persister
   let persistor = persistStore(store);
-
-  window.store = store;
 
   return { store, persistor };
 }

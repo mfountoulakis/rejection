@@ -21,7 +21,7 @@
     "redux-persist": "^5.10.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=DEVELOPMENT && react-scripts start",
     "build": "react-scripts build",
     "test": "nyc riteway -r @babel/register -r @babel/polyfill 'src/**/*.test.js' | tap-nirvana",
     "eject": "react-scripts eject"
