@@ -5,13 +5,17 @@ import { connect } from "react-redux";
 import { faEquals, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const ConnectedLevel = ({ asks }) => {
+export const ConnectedLevel = ({
+  acceptedTotal,
+  rejectedTotal,
+  pointTotal
+}) => {
   return (
     <nav className="level">
       <div className="level-item has-text-centered">
         <div>
           <p className="heading">Rejected Total (total points from accepts)</p>
-          <p className="acceptedTotal title">{asks.acceptedTotal}</p>
+          <p className="acceptedTotal title">{acceptedTotal}</p>
         </div>
       </div>
       <div className="level-item has-text-centered">
@@ -23,7 +27,7 @@ export const ConnectedLevel = ({ asks }) => {
           <p className="heading">
             Rejected Total (total points from rejections)
           </p>
-          <p className="rejectedTotal title">{asks.rejectedTotal}</p>
+          <p className="rejectedTotal title">{rejectedTotal}</p>
         </div>
       </div>
       <div className="level-item has-text-centered">
@@ -32,7 +36,7 @@ export const ConnectedLevel = ({ asks }) => {
       <div className="level-item has-text-centered">
         <div>
           <p className="heading">Total Score</p>
-          <p className="totalScore title">{asks.pointTotal}</p>
+          <p className="totalScore title">{pointTotal}</p>
         </div>
       </div>
     </nav>
@@ -40,7 +44,7 @@ export const ConnectedLevel = ({ asks }) => {
 };
 
 const mapStateToProps = state => {
-  return { asks: getViewState(state.asks) };
+  return getViewState(state.asks);
 };
 
 const Level = connect(mapStateToProps)(ConnectedLevel);
