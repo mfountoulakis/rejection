@@ -5,8 +5,8 @@ import { createAsk, createState } from "../reducer-factories";
 import { addAsk } from "../actions";
 import { getViewState } from "../selectors";
 
-test("creating asks in state", ({ same, end }) => {
-  const msg = "should return return the correct computed property value";
+test("Adding asks to the store", ({ same, end }) => {
+  const msg = "should return return the correct computed property values";
   const asks = [
     createAsk({
       id: 1,
@@ -36,7 +36,9 @@ test("creating asks in state", ({ same, end }) => {
 
   const expected = Object.assign(createState(), {
     asks: asks,
-    pointTotal: 12
+    pointTotal: 12,
+    rejectedTotal: 10,
+    acceptedTotal: 2
   });
 
   same(actual, expected, msg);

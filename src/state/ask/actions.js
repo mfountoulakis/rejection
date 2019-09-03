@@ -26,5 +26,3 @@ export const rejectAsk = id => ({
   type: askActions.REJECT_ASK,
   payload: id
 });
-// window.addAsk = addAsk;
-// window.acceptAsk = acceptAsk;
