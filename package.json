@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=DEVELOPMENT && react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_PATH=src/ && react-scripts build",
     "test": "nyc riteway -r @babel/register -r @babel/polyfill 'src/**/*.test.js' | tap-nirvana",
     "eject": "react-scripts eject"
   },
