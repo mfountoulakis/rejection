@@ -17,7 +17,7 @@ describe("Asks component", async assert => {
       </Provider>
     );
   {
-    const props = {};
+    const props = { asks: [] };
     const $ = createComponent(props);
 
     assert({
