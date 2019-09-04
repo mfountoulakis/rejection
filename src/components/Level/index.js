@@ -1,2 +1,1 @@
-export { default } from "./Level";
-export { ConnectedLevel } from "./Level";
+export { default, Level } from "./Level";

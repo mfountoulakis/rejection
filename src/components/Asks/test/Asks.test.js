@@ -1,11 +1,18 @@
 import { describe } from "riteway";
 import render from "riteway/render-component";
-import React from "react";
 import { Asks } from "components/Asks";
 
 import { Provider } from "react-redux";
 import configureStore from "state/store";
-import { askReducer, addAsk, getViewState, createAsk } from "state/ask";
+import {
+  askReducer,
+  addAsk,
+  getViewState,
+  createAsk,
+  getAsks
+} from "state/ask";
+
+import React, { useReducer } from "react";
 
 describe("Asks component", async assert => {
   const { store } = configureStore();
