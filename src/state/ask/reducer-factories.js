@@ -14,8 +14,6 @@ export const createAsk = ({
   status
 });
 
-export const createStoreCopy = (reducer, state) => createStore(reducer, state);
-
 export const createState = ({ asks = [] } = {}) => ({
   asks
 });

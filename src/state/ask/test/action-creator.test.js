@@ -46,15 +46,7 @@ test("acceptAsk()", ({ same, end }) => {
     })
   );
 
-  //create copy of redux store from reducer-factories
-  //Not sure if this is the correct way to test dispatched actions.
-  const store = createStoreCopy(askReducer, initialState);
-
-  //dispatch acceptAsk action to store with ask id
-  store.dispatch(acceptAsk(1));
-
-  //examine the state of the store
-  var actual = store.getState();
+  const actual = askReducer(initialState, acceptAsk(1));
 
   const expected = Object.assign(createState(), {
     asks: [
@@ -87,15 +79,7 @@ test("rejectAsk()", ({ same, end }) => {
     })
   );
 
-  //create copy of redux store from reducer-factories
-  //Not sure if this is the correct way to test dispatched actions.
-  const store = createStoreCopy(askReducer, initialState);
-
-  //dispatch acceptAsk action to store with ask id
-  store.dispatch(rejectAsk(1));
-
-  //examine the state of the store
-  var actual = store.getState();
+  const actual = askReducer(initialState, rejectAsk(1));
 
   const expected = Object.assign(createState(), {
     asks: [
